@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8"/>
+		<title>15 Metodo Attr</title>
+		
+		<!--Hojas de estilo -->
+		<style type="text/css">
+			.test
+			{
+				background-color:red;
+			}
+		</style>
+		
+		<!--Scripts Aca -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js">		
+		</script>
+		<script type="text/javascript">
+			$(document).on("ready",function(){
+				//obtiene el valor del atributo clase
+				console.log($('#prueba').attr("class"));
+				//elimina el atributo clase
+				$('#prueba').removeAttr("class");
+				//le agrega el atributo class="Alguna"
+				$('#prueba').attr("class","Alguna");
+				console.log($('#prueba').attr("class"));
+				//le agrega un atributo inventado
+				$('#prueba').attr("data-lightbox","roadtrip");
+				console.log($('#prueba').attr("data-lightbox"));
+				
+				//avisar al usuario que esta saliendo de esta pág. web
+				$('a').on("click",function(evento){
+					evento.preventDefault();
+					var link=$(this).attr('href');
+					alert("Usted esta saliendo de esta pág. web");
+					location.href=link;
+				});
+				
+			});
+		
+		</script>
+		
+	</head>
+	<body>
+		<div id="prueba" class="pruebaClase">Haz clic aquí</div>
+		<a href="http://programando.la/">Enlace a ProgramandoLA</a>		
+	</body>
+</html>
